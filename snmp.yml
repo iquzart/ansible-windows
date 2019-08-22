@@ -2,10 +2,9 @@
   - hosts: all
     tasks:
       - name: 'windows : install SNMP'
-        win_dsc:
-          resource_name: WindowsFeature
-          Name: SNMP-Service
-          Ensure: Present
+        win_feature:
+          name: SNMP-Service
+          state: Present
 
       - name: Replace SNMP communities and managers
         win_snmp:
