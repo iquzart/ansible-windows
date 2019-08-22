@@ -23,7 +23,7 @@
        
       - name: restart snmp
 #        become: true
-        service:
+        win_service:
            name: SNMP-Service
            state: restarted
 
