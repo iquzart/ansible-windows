@@ -21,3 +21,10 @@
             - public
           managers: []
           action: set
+       
+      - name: restart snmp
+        become: true
+        service:
+           name: "{{ snmp_service_name }}"
+           state: restarted
+
