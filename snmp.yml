@@ -1,5 +1,5 @@
 ---
-  - hosts: Windows
+  - hosts: all
     tasks:
       - name: Replace SNMP communities and managers
         win_snmp:
