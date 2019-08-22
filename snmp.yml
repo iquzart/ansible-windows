@@ -3,9 +3,9 @@
     tasks:
       - name: 'windows : install SNMP'
         win_dsc:
-          resource_name: "{{ snmp_resource_name }}"
-          Name: "{{ snmp_name }}"
-          Ensure: "{{ snmp_present }}"
+          resource_name: WindowsFeature
+          Name: SNMP-Service
+          Ensure: Present
 
       - name: Replace SNMP communities and managers
         win_snmp:
