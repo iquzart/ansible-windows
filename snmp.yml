@@ -24,6 +24,6 @@
       - name: restart snmp
 #        become: true
         win_service:
-           name: SNMP-Service
+           name: SNMP
            state: restarted
 
