@@ -22,7 +22,7 @@
           action: set
        
       - name: restart snmp
-        become: true
+#        become: true
         service:
            name: SNMP-Service
            state: restarted
