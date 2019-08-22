@@ -1,0 +1,19 @@
+---
+  - hosts: Windows
+    tasks:
+      - name: Replace SNMP communities and managers
+        win_snmp:
+          communities:
+            - MySnMPStr!ng
+          managers:
+            - 192.168.1.2
+          action: set
+
+  - hosts: Windows
+    tasks:
+      - name: Replace SNMP communities and clear managers
+        win_snmp:
+          communities:
+            - public
+          managers: []
+          action: set
