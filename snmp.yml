@@ -1,6 +1,12 @@
 ---
   - hosts: all
     tasks:
+      - name: 'windows : install SNMP'
+        win_dsc:
+          resource_name: "{{ snmp_resource_name }}"
+          Name: "{{ snmp_name }}"
+          Ensure: "{{ snmp_present }}"
+
       - name: Replace SNMP communities and managers
         win_snmp:
           communities:
@@ -9,8 +15,6 @@
             - 192.168.1.2
           action: set
 
-  - hosts: Windows
-    tasks:
       - name: Replace SNMP communities and clear managers
         win_snmp:
           communities:
